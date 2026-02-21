@@ -1,4 +1,4 @@
-<![CDATA[# 🐒 MCP-Monkey
+# 🐒 MCP-Monkey
 
 **Bridge AI coding agents to your Chrome browser via the Model Context Protocol.**
 
@@ -167,4 +167,4 @@ On first install, the extension ships with a sample **RunPod Status** script tha
 ## License
 
 MIT
-]]>
+
