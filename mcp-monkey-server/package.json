@@ -1,0 +1,21 @@
+{
+  "name": "mcp-monkey-server",
+  "version": "1.0.0",
+  "description": "MCP-Monkey: Bridge AI coding agents to Chrome browser via MCP + WebSocket",
+  "type": "module",
+  "bin": {
+    "mcp-monkey": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "ws": "^8.18.0",
+    "zod": "^3.25.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

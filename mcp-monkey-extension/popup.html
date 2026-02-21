@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP-Monkey</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <h1 class="logo">
+          <span class="logo-icon">🐒</span>
+          MCP-Monkey
+        </h1>
+        <div class="status-badge" id="status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text">Checking...</span>
+        </div>
+      </div>
+      <p class="subtitle">Browser scripts for AI agents</p>
+    </header>
+
+    <!-- New Script Form -->
+    <section class="card" id="form-section">
+      <div class="card-header" id="form-toggle">
+        <h2>
+          <span class="card-icon">✨</span>
+          New Script
+        </h2>
+        <button class="btn-icon" id="toggle-form-btn" title="Toggle form">
+          <span class="chevron">▼</span>
+        </button>
+      </div>
+
+      <form id="script-form" class="form">
+        <div class="form-group">
+          <label for="script-name">Name</label>
+          <input 
+            type="text" 
+            id="script-name" 
+            placeholder="e.g. check-deployment"
+            required
+            pattern="[a-zA-Z0-9_-]+"
+            title="Letters, numbers, hyphens, and underscores only"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="script-description">Description</label>
+          <input 
+            type="text" 
+            id="script-description"
+            placeholder="What does this script do?"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="script-url">URL Pattern</label>
+          <input 
+            type="text" 
+            id="script-url"
+            placeholder="*://example.com/*"
+            required
+          >
+          <span class="form-hint">Chrome match pattern (e.g. *://site.com/*)</span>
+        </div>
+
+        <div class="form-group">
+          <label for="script-code">JavaScript Code</label>
+          <textarea
+            id="script-code"
+            placeholder="// Your script code here...&#10;// Use 'args' to access passed arguments&#10;// Return a value to send back to the AI agent&#10;&#10;const title = document.title;&#10;return title;"
+            required
+            rows="8"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="save-btn">
+          <span class="btn-icon-left">💾</span>
+          Save Script
+        </button>
+      </form>
+    </section>
+
+    <!-- Saved Scripts -->
+    <section class="card">
+      <div class="card-header">
+        <h2>
+          <span class="card-icon">📜</span>
+          Saved Scripts
+          <span class="count-badge" id="script-count">0</span>
+        </h2>
+      </div>
+      <div id="scripts-list" class="scripts-list">
+        <div class="empty-state">
+          <span class="empty-icon">🤷</span>
+          <p>No scripts saved yet</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>MCP-Monkey v1.0.0</span>
+      <span class="footer-dot">·</span>
+      <span>Port 8765</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
